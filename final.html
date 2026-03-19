@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Flip Lounge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Q estudios</div>
+
+<nav>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('product')">Product</a>
+<a onclick="showPage('reviews')">Reviews</a>
+<a onclick="showPage('about')">More About Us</a>
+<a onclick="showPage('contact')">Contact</a>
+</nav>
+
+<div class="cart" onclick="showPage('cart')">
+🛒 <span id="cartCount">0</span>
+</div>
+
+</header>
+
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+<div class="home-container">
+
+<img src="image21.jpg" class="home-main">
+
+<div class="home-row">
+<img src="image22.jpg">
+<img src="image23.jpg">
+<img src="image24.jpg">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCT -->
+
+<section id="product" class="page">
+
+<div class="product-layout">
+
+<div class="gallery">
+
+<button class="arrow left" onclick="prevImage()">‹</button>
+
+<img id="mainImage" src="image01.jpg">
+
+<button class="arrow right" onclick="nextImage()">›</button>
+
+</div>
+
+<div class="product-info">
+
+<h1>Flip Lounge</h1>
+
+<p class="description">
+
+<strong>Description:</strong>  
+The Rotating Lounge Chair is a multifunctional piece designed for compact spaces. Its rotating structure allows users to switch easily between an upright seat for work and a reclined lounge for relaxation. The design emphasizes simplicity, ergonomics, and intuitive use without complex mechanisms.
+
+</p>
+
+<p class="ref">REF: 29783017</p>
+<p class="ref">Measures: 470mm x 650mm</p>
+
+<p class="price">389,80€</p>
+
+<h4>Colors</h4>
+
+<div class="colors">
+<div class="color metal"></div>
+<div class="color black"></div>
+</div>
+
+<div class="cart-row">
+
+<div class="quantity">
+<button onclick="changeQty(-1)">-</button>
+<span id="qty">1</span>
+<button onclick="changeQty(1)">+</button>
+</div>
+
+<button class="addCart" onclick="addCart()">Add to Cart</button>
+
+<a class="moreInfo" onclick="showPage('moreInfo')">More info</a>
+
+</div>
+
+<p class="discount">15% discount on your first purchase</p>
+
+<p class="catalogLink" onclick="showPage('catalog')">
+View the rest of the catalogue
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section id="reviews" class="page">
+
+<h2>+500 Reviews</h2>
+
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span class="score">4.8</span>
+</div>
+
+<div class="review-grid">
+<img src="image11.jpg">
+<img src="image12.jpg">
+<img src="image13.jpg">
+<img src="image14.jpg">
+<img src="image15.jpg">
+<img src="image16.jpg">
+</div>
+
+<p class="readMore" onclick="showPage('reviewError')">
+Read more
+</p>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="page">
+
+<h2>More About Us</h2>
+
+<p>
+We are a small design studio focused on creating furniture for modern living. Our work is driven by the idea that everyday objects should be both functional and adaptable to changing lifestyles. As living spaces become smaller and more flexible, furniture needs to evolve with them.
+</p>
+
+<p>
+Our team combines product design, digital tools, and creative experimentation to develop pieces that simplify daily life. We believe that good design should be intuitive, durable, and visually clean. Rather than adding complexity, we aim to reduce it, creating objects that feel natural to use.
+</p>
+
+<p>
+The Flip Lounge was developed from this philosophy. It explores how a single piece of furniture can serve multiple purposes through a simple movement. By rotating the structure, the chair shifts from an upright seat to a relaxed lounge position, offering different ways to sit within the same compact form.
+</p>
+
+<p>
+Our design process blends traditional design thinking with new technologies. We experiment with digital modeling and AI-assisted tools to explore shapes, ergonomics, and functionality, allowing us to test many ideas before arriving at a refined solution.
+</p>
+
+<p>
+At the core of our work is a commitment to simplicity, versatility, and comfort. We design furniture that adapts to people’s lives — not the other way around.
+</p>
+
+<div class="about-images">
+<img src="image17.jpg">
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="page">
+
+<h2>Contact Us</h2>
+
+<div class="contact-info">
+
+<p><strong>María Quintáns Granados</strong></p>
+
+<p>Email: 2025100969@esad.pt</p>
+
+<p>
+Address:<br>
+Av. Calouste Gulbenkian 907<br>
+4460-268 Sra. da Hora<br>
+Portugal
+</p>
+
+</div>
+
+<form action="https://formsubmit.co/2025100969@esad.pt" method="POST">
+
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+
+<!-- CART -->
+
+<section id="cart" class="page">
+
+<div class="cartPage">
+
+<img src="image01.jpg" class="cartImage">
+
+<div class="cartActions">
+<button class="buyButton" onclick="checkout()">Continue Purchase</button>
+<p id="checkoutMessage"></p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATALOG -->
+
+<section id="catalog" class="page">
+<div class="centerPage">
+<h1>Working on it :)</h1>
+<img src="image19.jpg">
+</div>
+</section>
+
+
+<!-- REVIEW ERROR -->
+
+<section id="reviewError" class="page">
+<div class="centerPage">
+<h1>Oops, page error.</h1>
+<p>But I assure you the reviews are very good :)</p>
+</div>
+</section>
+
+
+<!-- MORE INFO -->
+
+<section id="moreInfo" class="page">
+
+<div class="scrollPage">
+
+<h1>Flip Lounge</h1>
+
+<p>
+At Q Estudios we believe that style matters in every type of space. For this reason, we want to bring our brand into multifunctional designs that combine aesthetics, comfort, and practicality.
+</p>
+
+<p>
+The Flip Lounge is an innovative chair that adapts to your needs. Its rotating structure allows you to easily switch from an upright position, perfect for working or reading, to a reclined position ideal for relaxing.
+</p>
+
+<p>
+With clean lines and an intuitive design, this chair combines functionality and elegance in a single piece of furniture, making any small space versatile and comfortable.
+</p>
+
+<img src="image20.jpg" class="planImage">
+
+<h3>Included in the purchase:</h3>
+
+<ul>
+<li>The chair fully assembled and ready to use.</li>
+<li>Two headrest extensions that can also be used as a footrest depending on your preference.</li>
+</ul>
+
+<img src="image25.jpg" class="planImage">
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
